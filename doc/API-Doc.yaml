@@ -1,0 +1,163 @@
+openapi: 3.0.3
+info:
+  title: task manager api
+  version: 1.0.0
+  contact: {}
+servers:
+  - url: 'http://localhost:3000/api/v1'
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+security:
+  - BasicAuth: []
+paths:
+  /tasks:
+    get:
+      tags:
+        - task request
+      summary: Get All Tasks
+      description: Get Al Tasks
+      operationId: Get all tasks
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: ''
+    post:
+      tags:
+        - task request
+      summary: Create Task
+      description: Create Task
+      operationId: Create Task
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  example: example
+            example:
+              title: example
+      responses:
+        '200':
+          description: ''
+  /tasks/{id}:
+    summary: Returns a user by ID.
+    parameters:
+      - name: id
+        in: path
+        schema:
+          type: string
+        required: true
+        description: ''
+    get:
+      tags:
+        - task request
+      summary: Get Task
+      description: Get Task
+      operationId: Get Task
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: ''
+    delete:
+      tags:
+        - task request
+      summary: Delete Task
+      description: Delete Task
+      operationId: Delete Task
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: ''
+    patch:
+      tags:
+        - task request
+      summary: Update Task
+      description: Update Task
+      operationId: Update Task
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  example: test
+                completed:
+                  type: boolean
+                  example: test
+            example:
+              title: example
+              completed: false
+      responses:
+        '200':
+          description: ''
+  /auth/register:
+    post:
+      tags:
+        - user request
+      summary: Register User
+      description: Register User
+      operationId: Register User
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: test@gmail.com
+                password:
+                  type: string
+                  example: '12345678'
+                username:
+                  type: string
+                  example: john doe
+            example:
+              email: test@gmail.com
+              password: '12345678'
+              username: john doe
+      responses:
+        '200':
+          description: ''
+  /auth/login:
+    post:
+      tags:
+        - user request
+      summary: Login User
+      description: Login User
+      operationId: Login User
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: test1@gmail.com
+                password:
+                  type: string
+                  example: '12345678'
+            example:
+              email: test1@gmail.com
+              password: '12345678'
+      responses:
+        '200':
+          description: ''
+tags:
+  - name: task request
+  - name: user request
