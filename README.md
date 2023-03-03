@@ -8,7 +8,7 @@ API Designed in Node.js for a very simple TODO application.
 
 2.Install the application: `npm Install`
 
-3.Place your own MongoDB URI in: `config/mongo.js`
+3.Place your own MongoDB URI in: `config/db.js`
 
 4.Start the server: `npm start` or `npm run dev`
 
