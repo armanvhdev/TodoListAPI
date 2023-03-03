@@ -12,7 +12,7 @@ API Designed in Node.js for a very simple TODO application.
 
 4.Start the server: `npm start` or `npm run dev`
 
-5.Enter `http://localhost:3000` into yourn browser bar
+5.Enter `http://localhost:3000` into your browser bar
 
 ## Tech Stack
 
